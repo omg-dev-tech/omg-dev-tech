@@ -1,11 +1,20 @@
 language: ruby
-cache: bundler
-gemfile: docs/Gemfile
+
+before_install:
+  - gem update --system
+  - gem install bundler
+
 script:
-  - bundle exec jekyll algolia --source docs --destination docs/_site --config docs/_config.yml
-branches:
-  only:
-    # Change this to gh-pages if you're deploying using the gh-pages branch
-    - main
+  - bundle install
+  - bundle exec jekyll build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $SECRET_TOKEN  # GitHub Personal Access Token을 환경 변수로 설정
+  local_dir: _site  # Jekyll이 생성한 빌드 디렉토리
+  on:
+    branch: main  # GitHub Pages로 배포할 브랜치
+
 rvm:
  - 3.3.6
