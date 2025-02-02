@@ -6,7 +6,24 @@
    Typography
    ========================================================================== */
 
-$doc-font-size: 16px !default;
+// 1. 폰트 페이스 정의
+@font-face {
+   font-family: 'D2Coding';
+   src: url('/assets/fonts/D2Coding.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'D2Coding';
+   src: url('/assets/fonts/D2CodingBold.ttf') format('truetype');
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+ }
+
+$doc-font-size: 12px !default;
 $doc-font-size-medium: $doc-font-size * 1.125 !default;
 $doc-font-size-large: $doc-font-size * 1.25 !default;
 $doc-font-size-x-large: $doc-font-size * 1.375 !default;
@@ -17,9 +34,9 @@ $indent-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+$sans-serif: "D2Coding", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: Monaco, Consolas, "Lucida Console", monospace !default;
+$monospace: "D2Coding", Monaco, Consolas, "Lucida Console", monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
